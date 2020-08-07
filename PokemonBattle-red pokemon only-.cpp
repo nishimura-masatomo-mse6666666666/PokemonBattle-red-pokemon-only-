@@ -6,91 +6,91 @@
 #include<stdio.h>
 #include<random>
 
-#define ESC 0x1B													//ƒGƒXƒP[ƒvƒV[ƒPƒ“ƒX@€”õ
+#define ESC 0x1B									//ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ã€€æº–å‚™
 using namespace std;
 
 class POKEMON {
-	string name;													//–¼‘O
-	int H = 0, A = 0, B = 0, C = 0, D = 0, S = 0;					//‚½‚¢‚è‚å‚­,‚±‚¤‚°‚«,‚Ú‚¤‚¬‚å,‚Æ‚­‚±‚¤,‚Æ‚­‚Ú‚¤,‚·‚Î‚â‚³
-	int w1 = 0, w2 = 0, w3 = 0, w4 = 0;								//‹Z1,2,3,4,
-	int t1 = 0, t2 = 0;												//ƒ^ƒCƒv1,2
+	string name;									//åå‰
+	int H = 0, A = 0, B = 0, C = 0, D = 0, S = 0;					//ãŸã„ã‚Šã‚‡ã,ã“ã†ã’ã,ã¼ã†ãã‚‡,ã¨ãã“ã†,ã¨ãã¼ã†,ã™ã°ã‚„ã•
+	int w1 = 0, w2 = 0, w3 = 0, w4 = 0;						//æŠ€1,2,3,4,
+	int t1 = 0, t2 = 0;								//ã‚¿ã‚¤ãƒ—1,2
 
 public:
-	void setName(const string& newName) { name = newName; }					//–¼‘O“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	string getName() { return name; }										//–¼‘OŒŸõ—pƒAƒNƒZƒbƒT
+	void setName(const string& newName) { name = newName; }						//åå‰èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	string getName() { return name; }								//åå‰æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
 
-	void setH(int newH) { H = newH; }								//‘Ì—Í“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	int getH() { return H; }										//‘Ì—ÍŒŸõ—pƒAƒNƒZƒbƒT
-	void setA(int newA) { A = newA; }								//‚±‚¤‚°‚«“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	int getA() { return A; }										//‚±‚¤‚°‚«ŒŸõ—pƒAƒNƒZƒbƒT
-	void setB(int newB) { B = newB; }								//‚Ú‚¤‚¬‚å“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	int getB() { return B; }										//‚Ú‚¤‚¬‚åŒŸõ—pƒAƒNƒZƒbƒT
-	void setC(int newC) { C = newC; }								//‚Æ‚­‚±‚¤“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	int getC() { return C; }										//‚Æ‚­‚±‚¤ŒŸõ—pƒAƒNƒZƒbƒT
-	void setD(int newD) { D = newD; }								//‚Æ‚­‚Ú‚¤“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	int getD() { return D; }										//‚Æ‚­‚Ú‚¤ŒŸõ—pƒAƒNƒZƒbƒT
-	void setS(int newS) { S = newS; }								//‚·‚Î‚â‚³“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	int getS() { return S; }										//‚·‚Î‚â‚³ŒŸõ—pƒAƒNƒZƒbƒT
+	void setH(int newH) { H = newH; }								//ä½“åŠ›èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	int getH() { return H; }									//ä½“åŠ›æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	void setA(int newA) { A = newA; }								//ã“ã†ã’ãèª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	int getA() { return A; }									//ã“ã†ã’ãæ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	void setB(int newB) { B = newB; }								//ã¼ã†ãã‚‡èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	int getB() { return B; }									//ã¼ã†ãã‚‡æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	void setC(int newC) { C = newC; }								//ã¨ãã“ã†èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	int getC() { return C; }									//ã¨ãã“ã†æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	void setD(int newD) { D = newD; }								//ã¨ãã¼ã†èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	int getD() { return D; }									//ã¨ãã¼ã†æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	void setS(int newS) { S = newS; }								//ã™ã°ã‚„ã•èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	int getS() { return S; }									//ã™ã°ã‚„ã•æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
 
-	void setW1(int newW1) { w1 = newW1; }								//‹Z1	“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	int getW1() { return w1; }											//‹Z1	ŒŸõ—pƒAƒNƒZƒbƒT
-	void setW2(int newW2) { w2 = newW2; }								//‹Z2	“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	int getW2() { return w2; }											//‹Z2	ŒŸõ—pƒAƒNƒZƒbƒT	
-	void setW3(int newW3) { w3 = newW3; }								//‹Z3	“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	int getW3() { return w3; }											//‹Z3	ŒŸõ—pƒAƒNƒZƒbƒT	
-	void setW4(int newW4) { w4 = newW4; }								//‹Z4	“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	int getW4() { return w4; }											//‹Z4	ŒŸõ—pƒAƒNƒZƒbƒT
+	void setW1(int newW1) { w1 = newW1; }								//æŠ€1	èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	int getW1() { return w1; }									//æŠ€1	æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	void setW2(int newW2) { w2 = newW2; }								//æŠ€2	èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	int getW2() { return w2; }									//æŠ€2	æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ	
+	void setW3(int newW3) { w3 = newW3; }								//æŠ€3	èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	int getW3() { return w3; }									//æŠ€3	æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ	
+	void setW4(int newW4) { w4 = newW4; }								//æŠ€4	èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	int getW4() { return w4; }									//æŠ€4	æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
 
-	void setT1(int newT1) { t1 = newT1; }								//ƒ^ƒCƒv‚P	“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	int getT1() { return t1; }											//ƒ^ƒCƒv‚P	ŒŸõ—pƒAƒNƒZƒbƒT
-	void setT2(int newT2) { t2 = newT2; }								//ƒ^ƒCƒv‚Q	“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	int getT2() { return t2; }											//ƒ^ƒCƒv‚Q	ŒŸõ—pƒAƒNƒZƒbƒT
+	void setT1(int newT1) { t1 = newT1; }								//ã‚¿ã‚¤ãƒ—ï¼‘	èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	int getT1() { return t1; }									//ã‚¿ã‚¤ãƒ—ï¼‘	æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	void setT2(int newT2) { t2 = newT2; }								//ã‚¿ã‚¤ãƒ—ï¼’	èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	int getT2() { return t2; }									//ã‚¿ã‚¤ãƒ—ï¼’	æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
 
 };
 
 
 class WAZA {
-	string wazaname;													//‹Z–¼
-	int type;															//‹Z‚Ìƒ^ƒCƒv
-	string bunnrui;														//‹Z‚Ì•ª—Ş
-	int i = 0, m = 0;													//‹Z‚ÌˆĞ—Í,–½’†—¦
+	string wazaname;										//æŠ€å
+	int type;											//æŠ€ã®ã‚¿ã‚¤ãƒ—
+	string bunnrui;											//æŠ€ã®åˆ†é¡
+	int i = 0, m = 0;										//æŠ€ã®å¨åŠ›,å‘½ä¸­ç‡
 public:
-	void setWAZA(const string& newWAZA) { wazaname = newWAZA; }			//‹Z–¼		“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	string getWAZA() { return wazaname; }								//‹Z–¼		ŒŸõ—pƒAƒNƒZƒbƒT
+	void setWAZA(const string& newWAZA) { wazaname = newWAZA; }			//æŠ€å		èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	string getWAZA() { return wazaname; }						//æŠ€å		æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
 
-	void setTYPE(int newTYPE) { type = newTYPE; }						//‹Zƒ^ƒCƒv	“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	int getTYPE() { return type; }										//‹Zƒ^ƒCƒv	ŒŸõ—pƒAƒNƒZƒbƒT
+	void setTYPE(int newTYPE) { type = newTYPE; }					//æŠ€ã‚¿ã‚¤ãƒ—	èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	int getTYPE() { return type; }							//æŠ€ã‚¿ã‚¤ãƒ—	æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
 
-	void setBU(const string& newBU) { bunnrui = newBU; }				//‹Z•ª—Ş	“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	string getBU() { return bunnrui; }									//‹Z•ª—Ş	ŒŸõ—pƒAƒNƒZƒbƒT
+	void setBU(const string& newBU) { bunnrui = newBU; }				//æŠ€åˆ†é¡	èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	string getBU() { return bunnrui; }						//æŠ€åˆ†é¡	æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
 
-	void setI(int newI) { i = newI; }									//‹ZˆĞ—Í	“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	int getI() { return i; }											//‹ZˆĞ—Í	ŒŸõ—pƒAƒNƒZƒbƒT
-	void setM(int newM) { m = newM; }									//‹Z–½’†—¦	“Ç‚İ‚İ—pƒAƒNƒZƒbƒT
-	int getM() { return m; }											//‹Z–½’†—¦	ŒŸõ—pƒAƒNƒZƒbƒT
+	void setI(int newI) { i = newI; }						//æŠ€å¨åŠ›	èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	int getI() { return i; }							//æŠ€å¨åŠ›	æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	void setM(int newM) { m = newM; }						//æŠ€å‘½ä¸­ç‡	èª­ã¿è¾¼ã¿ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
+	int getM() { return m; }							//æŠ€å‘½ä¸­ç‡	æ¤œç´¢ç”¨ã‚¢ã‚¯ã‚»ãƒƒã‚µ
 
 };
 
 
-vector<POKEMON> vec;												//POKEMON‚ğvector‚Éİ’è
-vector<WAZA>vec2;													//WAZA‚ğvector‚Éİ’è
-vector<string>vec3;													//ƒ^ƒCƒv‚ğvector‚Éİ’è
+vector<POKEMON> vec;									//POKEMONã‚’vectorã«è¨­å®š
+vector<WAZA>vec2;									//WAZAã‚’vectorã«è¨­å®š
+vector<string>vec3;									//ã‚¿ã‚¤ãƒ—ã‚’vectorã«è¨­å®š
 
 
-ifstream infile1("POKEMONZUKAN.txt");								//–¼•ëƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+ifstream infile1("POKEMONZUKAN.txt");							//åç°¿ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿
 ifstream infile2("WAZAZUKAN.txt");
 ifstream infile3("TAIPU.txt");
-string line;														//s‚ğ”‚¦‚é‚½‚ß‚Ì•Ï”
-regex rx1(R"(\s)");													//•¶š—ñ‚Ì³‹K‰»
+string line;										//è¡Œã‚’æ•°ãˆã‚‹ãŸã‚ã®å¤‰æ•°
+regex rx1(R"(\s)");									//æ–‡å­—åˆ—ã®æ­£è¦åŒ–
 
 void Class1() {
 
-	int PNUM = 0;														//ƒ|ƒPƒ‚ƒ“‚Ö‚Ì1Ÿ“I‚È”Ô†•t‚¯
+	int PNUM = 0;									//ãƒã‚±ãƒ¢ãƒ³ã¸ã®1æ¬¡çš„ãªç•ªå·ä»˜ã‘
 
-	while (getline(infile1, line)) {										//ÅŒã‚Ìs‚Ü‚Å’Tõ
-		sregex_token_iterator it1(line.begin(), line.end(), rx1, -1);		//ŒŸõğŒ
+	while (getline(infile1, line)) {						//æœ€å¾Œã®è¡Œã¾ã§æ¢ç´¢
+		sregex_token_iterator it1(line.begin(), line.end(), rx1, -1);		//æ¤œç´¢æ¡ä»¶
 
-		string NAMAE = *it1++;											//Ÿ‚É–¼‘O‚ğŒŸõ
+		string NAMAE = *it1++;							//æ¬¡ã«åå‰ã‚’æ¤œç´¢
 
 		int tairyoku = stoi(*it1++);
 		int kougeki = stoi(*it1++);
@@ -107,25 +107,25 @@ void Class1() {
 		int taipu1 = stoi(*it1++);
 		int taipu2 = stoi(*it1);
 
-		vec.emplace_back();												//—v‘f‚ÌŠm•Û
-		vec[PNUM].setName(NAMAE);										//–¼‘O‚ÌŠi”[
+		vec.emplace_back();											//è¦ç´ ã®ç¢ºä¿
+		vec[PNUM].setName(NAMAE);										//åå‰ã®æ ¼ç´
 
-		vec[PNUM].setH(tairyoku);										//‚½‚¢‚è‚å‚­‚ÌŠi”[
-		vec[PNUM].setA(kougeki);										//‚±‚¤‚°‚«‚ÌŠi”[
-		vec[PNUM].setB(bougyo);											//‚Ú‚¤‚¬‚å‚ÌŠi”[
-		vec[PNUM].setC(tokukou);										//‚Æ‚­‚±‚¤‚ÌŠi”[
-		vec[PNUM].setD(tokubou);										//‚Æ‚­‚Ú‚¤‚ÌŠi”[
-		vec[PNUM].setS(subayasa);										//‚·‚Î‚â‚³‚ÌŠi”[
+		vec[PNUM].setH(tairyoku);										//ãŸã„ã‚Šã‚‡ãã®æ ¼ç´
+		vec[PNUM].setA(kougeki);										//ã“ã†ã’ãã®æ ¼ç´
+		vec[PNUM].setB(bougyo);											//ã¼ã†ãã‚‡ã®æ ¼ç´
+		vec[PNUM].setC(tokukou);										//ã¨ãã“ã†ã®æ ¼ç´
+		vec[PNUM].setD(tokubou);										//ã¨ãã¼ã†ã®æ ¼ç´
+		vec[PNUM].setS(subayasa);										//ã™ã°ã‚„ã•ã®æ ¼ç´
 
-		vec[PNUM].setW1(waza1);										//‹Z‚P‚ÌŠi”[
-		vec[PNUM].setW2(waza2);										//‹Z‚Q‚ÌŠi”[
-		vec[PNUM].setW3(waza3);										//‹Z‚R‚ÌŠi”[
-		vec[PNUM].setW4(waza4);										//‹Z‚S‚ÌŠi”[
+		vec[PNUM].setW1(waza1);											//æŠ€ï¼‘ã®æ ¼ç´
+		vec[PNUM].setW2(waza2);											//æŠ€ï¼’ã®æ ¼ç´
+		vec[PNUM].setW3(waza3);											//æŠ€ï¼“ã®æ ¼ç´
+		vec[PNUM].setW4(waza4);											//æŠ€ï¼”ã®æ ¼ç´
 
-		vec[PNUM].setT1(taipu1);										//ƒ^ƒCƒv‚P‚ÌŠi”[
-		vec[PNUM].setT2(taipu2);										//ƒ^ƒCƒv‚Q‚ÌŠi”[
+		vec[PNUM].setT1(taipu1);										//ã‚¿ã‚¤ãƒ—ï¼‘ã®æ ¼ç´
+		vec[PNUM].setT2(taipu2);										//ã‚¿ã‚¤ãƒ—ï¼’ã®æ ¼ç´
 
-		PNUM++;													//Ÿ‚Ìƒ|ƒPƒ‚ƒ“‚Ö‚ÌˆÚs
+		PNUM++;													//æ¬¡ã®ãƒã‚±ãƒ¢ãƒ³ã¸ã®ç§»è¡Œ
 
 	}
 }
@@ -133,35 +133,35 @@ void Class1() {
 void Class2() {
 	int WNUM = 0;
 
-	while (getline(infile2, line)) {										//ÅŒã‚Ìs‚Ü‚Å’Tõ
-		sregex_token_iterator it2(line.begin(), line.end(), rx1, -1);		//ŒŸõğŒ
+	while (getline(infile2, line)) {										//æœ€å¾Œã®è¡Œã¾ã§æ¢ç´¢
+		sregex_token_iterator it2(line.begin(), line.end(), rx1, -1);		//æ¤œç´¢æ¡ä»¶
 
-		string WNAMAE = *it2++;												//‹Z–¼			‚ğŒŸõ
-		int WT = stoi(*it2++);												//‹Zƒ^ƒCƒv		‚ğŒŸõ
-		string WB = *it2++;													//‹Z•ª—Ş		‚ğŒŸõ
-		int WI = stoi(*it2++);												//‹Z‚ÌˆĞ—Í		‚ğŒŸõ
-		int WM = stoi(*it2++);												//‹Z‚Ì–½’†—¦	‚ğŒŸõ
+		string WNAMAE = *it2++;											//æŠ€å		ã‚’æ¤œç´¢
+		int WT = stoi(*it2++);											//æŠ€ã‚¿ã‚¤ãƒ—		ã‚’æ¤œç´¢
+		string WB = *it2++;											//æŠ€åˆ†é¡		ã‚’æ¤œç´¢
+		int WI = stoi(*it2++);											//æŠ€ã®å¨åŠ›		ã‚’æ¤œç´¢
+		int WM = stoi(*it2++);											//æŠ€ã®å‘½ä¸­ç‡	ã‚’æ¤œç´¢
 
 		vec2.emplace_back();
-		vec2[WNUM].setWAZA(WNAMAE);											//‹Z–¼			‚ÌŠi”[
-		vec2[WNUM].setTYPE(WT);												//‹Zƒ^ƒCƒv		‚ÌŠi”[
-		vec2[WNUM].setBU(WB);												//‹Z•ª—Ş		‚ÌŠi”[
-		vec2[WNUM].setI(WI);												//‹Z‚ÌˆĞ—Í		‚ÌŠi”[
-		vec2[WNUM].setM(WM);												//‹Z‚Ì–½’†—¦	‚ÌŠi”[
+		vec2[WNUM].setWAZA(WNAMAE);										//æŠ€å		ã®æ ¼ç´
+		vec2[WNUM].setTYPE(WT);											//æŠ€ã‚¿ã‚¤ãƒ—		ã®æ ¼ç´
+		vec2[WNUM].setBU(WB);											//æŠ€åˆ†é¡		ã®æ ¼ç´
+		vec2[WNUM].setI(WI);											//æŠ€ã®å¨åŠ›		ã®æ ¼ç´
+		vec2[WNUM].setM(WM);											//æŠ€ã®å‘½ä¸­ç‡	ã®æ ¼ç´
 
-		WNUM++;																//Ÿ‚Ì‹Z‚Ö‚ÌˆÚs
+		WNUM++;													//æ¬¡ã®æŠ€ã¸ã®ç§»è¡Œ
 	}
 }
 
 void VEC() {
-	while (getline(infile3, line)) {										//ÅŒã‚Ìs‚Ü‚Å’Tõ
-		sregex_token_iterator it3(line.begin(), line.end(), rx1, -1);		//ŒŸõğŒ
+	while (getline(infile3, line)) {						//æœ€å¾Œã®è¡Œã¾ã§æ¢ç´¢
+		sregex_token_iterator it3(line.begin(), line.end(), rx1, -1);		//æ¤œç´¢æ¡ä»¶
 		for (int i = 0;i < 12;) {
-			string Type = *it3++;												//ƒ^ƒCƒv		‚ğŒŸõ
+			string Type = *it3++;						//ã‚¿ã‚¤ãƒ—		ã‚’æ¤œç´¢
 
 			vec3.emplace_back();
-			vec3[i] = Type;														//ƒ^ƒCƒv		‚ÌŠi”[
-			i++;																//Ÿ‚Ìƒ^ƒCƒv‚Ö‚ÌˆÚs
+			vec3[i] = Type;							//ã‚¿ã‚¤ãƒ—		ã®æ ¼ç´
+			i++;								//æ¬¡ã®ã‚¿ã‚¤ãƒ—ã¸ã®ç§»è¡Œ
 		}
 	}
 
@@ -169,130 +169,130 @@ void VEC() {
 
 
 
-uniform_int_distribution<unsigned>dist1(0, 3);				//‘Îí‘Šè‚ÌƒRƒ}ƒ“ƒh‘I‘ğ—p—”¶¬	€”õ1
-random_device engine;										//‘Îí‘Šè‚ÌƒRƒ}ƒ“ƒh‘I‘ğ—p—”¶¬	€”õ2
-uniform_real_distribution<double>dist2(0.0, 1.0);			//‹}ŠŠm—¦—p—”¶¬	€”õ
+uniform_int_distribution<unsigned>dist1(0, 3);				//å¯¾æˆ¦ç›¸æ‰‹ã®ã‚³ãƒãƒ³ãƒ‰é¸æŠç”¨ä¹±æ•°ç”Ÿæˆ	æº–å‚™1
+random_device engine;							//å¯¾æˆ¦ç›¸æ‰‹ã®ã‚³ãƒãƒ³ãƒ‰é¸æŠç”¨ä¹±æ•°ç”Ÿæˆ	æº–å‚™2
+uniform_real_distribution<double>dist2(0.0, 1.0);			//æ€¥æ‰€ç¢ºç‡ç”¨ä¹±æ•°ç”Ÿæˆ	æº–å‚™
 
 
-int Damage(int x, int y, int z, double d) {				//‹Z‚ğ‘Å‚Â‘¤,‹Z‚ğó‚¯‚é‘¤,ƒRƒ}ƒ“ƒh“ü—Í“à—e,‹}ŠŠm—¦
+int Damage(int x, int y, int z, double d) {				//æŠ€ã‚’æ‰“ã¤å´,æŠ€ã‚’å—ã‘ã‚‹å´,ã‚³ãƒãƒ³ãƒ‰å…¥åŠ›å†…å®¹,æ€¥æ‰€ç¢ºç‡
 
-	int I = 0;								//‹ZˆĞ	—p•Ï”
-	int D = 0;								//ƒ_ƒ[ƒW—p•Ï”
-	string S;								//‹Z•ª—Ş”»•Ê—p•Ï”
-	if (z == 0) {							//‹Z1‚ğ‘I‘ğ‚µ‚½ê‡
+	int I = 0;							//æŠ€å¨	ç”¨å¤‰æ•°
+	int D = 0;							//ãƒ€ãƒ¡ãƒ¼ã‚¸ç”¨å¤‰æ•°
+	string S;							//æŠ€åˆ†é¡åˆ¤åˆ¥ç”¨å¤‰æ•°
+	if (z == 0) {							//æŠ€1ã‚’é¸æŠã—ãŸå ´åˆ
 		I = vec2[vec[x].getW1()].getI();
 		S = vec2[vec[x].getW1()].getBU();
 	}
-	else if (z == 1) {						//‹Z2‚ğ‘I‘ğ‚µ‚½ê‡
+	else if (z == 1) {						//æŠ€2ã‚’é¸æŠã—ãŸå ´åˆ
 		I = vec2[vec[x].getW2()].getI();
 		S = vec2[vec[x].getW2()].getBU();
 	}
-	else if (z == 2) {						//‹Z3‚ğ‘I‘ğ‚µ‚½ê‡
+	else if (z == 2) {						//æŠ€3ã‚’é¸æŠã—ãŸå ´åˆ
 		I = vec2[vec[x].getW3()].getI();
 		S = vec2[vec[x].getW3()].getBU();
 	}
-	else if (z == 3) {						//‹Z4‚ğ‘I‘ğ‚µ‚½ê‡
+	else if (z == 3) {						//æŠ€4ã‚’é¸æŠã—ãŸå ´åˆ
 		I = vec2[vec[x].getW4()].getI();
 		S = vec2[vec[x].getW4()].getBU();
 	}
 
 	double M = 1.0;
-	if (d > 0.5)M = 1.75;																	//50%‚ÌŠm—¦‚Åƒ_ƒ[ƒW‚ª1.75”{
+	if (d > 0.5)M = 1.75;											//50%ã®ç¢ºç‡ã§ãƒ€ãƒ¡ãƒ¼ã‚¸ãŒ1.75å€
 
 
-	if (stoi(S) == 1)		 D = ((22 * I * vec[x].getA() / vec[y].getB()) / 50 * M / 1);		//•¨—UŒ‚‚Ì‚Æ‚«
+	if (stoi(S) == 1)		 D = ((22 * I * vec[x].getA() / vec[y].getB()) / 50 * M / 1);		//ç‰©ç†æ”»æ’ƒã®ã¨ã
 
-	else if (stoi(S) == 2)	 D = ((22 * I * vec[x].getC() / vec[y].getD()) / 50 * M / 1);	//“ÁêUŒ‚‚Ì‚Æ‚«
+	else if (stoi(S) == 2)	 D = ((22 * I * vec[x].getC() / vec[y].getD()) / 50 * M / 1);			//ç‰¹æ®Šæ”»æ’ƒã®ã¨ã
 	return D;
 }
 
 
 
 
-void Draw(int a, int x2, int y2) {											//©•ªƒ|ƒPƒ‚ƒ“•`‰æŠÖ”
+void Draw(int a, int x2, int y2) {				//ãƒã‚±ãƒ¢ãƒ³æç”»é–¢æ•°
 
 	if (a == 0) {
 		printf("%c[31m", ESC);
 		printf("%c[47m", ESC);
-		printf("%c[%d;%dHœœœ", ESC, y2, x2);
-		printf("%c[%d;%dHœ@@œ", ESC, (y2 + 1), x2);
-		printf("%c[%d;%dHœœœ", ESC, y2 + 2, x2);
-		printf("%c[%d;%dHœ@ œ", ESC, y2 + 3, x2);
-		printf("%c[%d;%dHœ@@œ", ESC, y2 + 4, x2);
+		printf("%c[%d;%dHâ—â—â—", ESC, y2, x2);
+		printf("%c[%d;%dHâ—ã€€ã€€â—", ESC, (y2 + 1), x2);
+		printf("%c[%d;%dHâ—â—â—", ESC, y2 + 2, x2);
+		printf("%c[%d;%dHâ—ã€€ â—", ESC, y2 + 3, x2);
+		printf("%c[%d;%dHâ—ã€€ã€€â—", ESC, y2 + 4, x2);
 	}
 
 
 	if (a == 1) {
 		printf("%c[34m", ESC);
 		printf("%c[47m", ESC);
-		printf("%c[%d;%dHœ    œ", ESC, y2, x2);
-		printf("%c[%d;%dHœ  œ", ESC, (y2 + 1), x2);
-		printf("%c[%d;%dHœœ", ESC, y2 + 2, x2);
-		printf("%c[%d;%dHœ@œ", ESC, y2 + 3, x2);
-		printf("%c[%d;%dHœ@  œ", ESC, y2 + 4, x2);
+		printf("%c[%d;%dHâ—    â—", ESC, y2, x2);
+		printf("%c[%d;%dHâ—  â—", ESC, (y2 + 1), x2);
+		printf("%c[%d;%dHâ—â—", ESC, y2 + 2, x2);
+		printf("%c[%d;%dHâ—ã€€â—", ESC, y2 + 3, x2);
+		printf("%c[%d;%dHâ—ã€€  â—", ESC, y2 + 4, x2);
 	}
 
 	if (a == 2) {
 		printf("%c[32m", ESC);
 		printf("%c[47m", ESC);
-		printf("%c[%d;%dHœœœœ", ESC, y2, x2);
-		printf("%c[%d;%dHœ@@@", ESC, (y2 + 1), x2);
-		printf("%c[%d;%dHœœœ", ESC, y2 + 2, x2);
-		printf("%c[%d;%dHœ", ESC, y2 + 3, x2);
-		printf("%c[%d;%dHœ", ESC, y2 + 4, x2);
+		printf("%c[%d;%dHâ—â—â—â—", ESC, y2, x2);
+		printf("%c[%d;%dHâ—ã€€ã€€ã€€", ESC, (y2 + 1), x2);
+		printf("%c[%d;%dHâ—â—â—", ESC, y2 + 2, x2);
+		printf("%c[%d;%dHâ—", ESC, y2 + 3, x2);
+		printf("%c[%d;%dHâ—", ESC, y2 + 4, x2);
 	}
 
 	if (a == 3) {
 		printf("%c[33m", ESC);
 		printf("%c[47m", ESC);
-		printf("%c[%d;%dHœœœ", ESC, y2, x2);
-		printf("%c[%d;%dHœ@@œ", ESC, (y2 + 1), x2);
-		printf("%c[%d;%dHœœœ", ESC, y2 + 2, x2);
-		printf("%c[%d;%dHœ", ESC, y2 + 3, x2);
-		printf("%c[%d;%dHœ", ESC, y2 + 4, x2);
+		printf("%c[%d;%dHâ—â—â—", ESC, y2, x2);
+		printf("%c[%d;%dHâ—ã€€ã€€â—", ESC, (y2 + 1), x2);
+		printf("%c[%d;%dHâ—â—â—", ESC, y2 + 2, x2);
+		printf("%c[%d;%dHâ—", ESC, y2 + 3, x2);
+		printf("%c[%d;%dHâ—", ESC, y2 + 4, x2);
 	}
 }
 
-void wait() {										//‘Ò‹@ŠÔ¶¬—pŠÖ”
+void wait() {							//å¾…æ©Ÿæ™‚é–“ç”Ÿæˆç”¨é–¢æ•°
 	for (int i = 0;i < 500000000;++i) {}
 }
 
 
-void BattleWindow(int a, int b, int H1, int H2) {		//ƒoƒgƒ‹‰æ–Ê•`‰æ—pŠÖ”
+void BattleWindow(int a, int b, int H1, int H2) {		//ãƒãƒˆãƒ«ç”»é¢æç”»ç”¨é–¢æ•°
 
-	system("cls");						//‰æ–ÊƒNƒŠƒA
+	system("cls");						//ç”»é¢ã‚¯ãƒªã‚¢
 
 	printf("%c[30m", ESC);
 	printf("%c[47m", ESC);
-	cout << endl << "  " << vec[b].getName() << endl << "@‘Ì—Í : " << H2;
+	cout << endl << "  " << vec[b].getName() << endl << "ã€€ä½“åŠ› : " << H2;
 	for (int i = 0;i < 17;++i)cout << endl;
 
 	cout << "                                                      " << vec[a].getName() << endl;
-	cout << "                                                      " << "‘Ì—Í : " << H1 << endl << endl;
+	cout << "                                                      " << "ä½“åŠ› : " << H1 << endl << endl;
 
-	int x1 = 50, y1 = 5;				//‘Šèƒ|ƒPƒ‚ƒ“•\¦—pÀ•WŒn
-	int x2 = 10, y2 = 17;				//©•ªƒ|ƒPƒ‚ƒ“•\¦—pÀ•WŒn
-	Draw(b, x1, y1);					//‘Šèƒ|ƒPƒ‚ƒ“•\¦
-	Draw(a, x2, y2);					//©•ªƒ|ƒPƒ‚ƒ“•\¦
+	int x1 = 50, y1 = 5;				//ç›¸æ‰‹ãƒã‚±ãƒ¢ãƒ³è¡¨ç¤ºç”¨åº§æ¨™ç³»
+	int x2 = 10, y2 = 17;				//è‡ªåˆ†ãƒã‚±ãƒ¢ãƒ³è¡¨ç¤ºç”¨åº§æ¨™ç³»
+	Draw(b, x1, y1);					//ç›¸æ‰‹ãƒã‚±ãƒ¢ãƒ³è¡¨ç¤º
+	Draw(a, x2, y2);					//è‡ªåˆ†ãƒã‚±ãƒ¢ãƒ³è¡¨ç¤º
 
 
 	printf("%c[30m", ESC);
 	for (int i = 0;i < 3;++i)cout << endl;
-	cout << vec[a].getName() << "@‚Í‚Ç‚¤‚·‚éH\n";
+	cout << vec[a].getName() << "ã€€ã¯ã©ã†ã™ã‚‹ï¼Ÿ\n";
 
-	string B1 = "“Áê", B2 = "“Áê", B3 = "“Áê", B4 = "“Áê";		//‹Zƒ^ƒCƒv•ª—Ş‰Šú’l
+	string B1 = "ç‰¹æ®Š", B2 = "ç‰¹æ®Š", B3 = "ç‰¹æ®Š", B4 = "ç‰¹æ®Š";		//æŠ€ã‚¿ã‚¤ãƒ—åˆ†é¡åˆæœŸå€¤
 
-	if (stoi(vec2[vec[a].getW1()].getBU()) == 1)B1 = "•¨—";
-	if (stoi(vec2[vec[a].getW2()].getBU()) == 1)B2 = "•¨—";
-	if (stoi(vec2[vec[a].getW3()].getBU()) == 1)B3 = "•¨—";
-	if (stoi(vec2[vec[a].getW4()].getBU()) == 1)B4 = "•¨—";
+	if (stoi(vec2[vec[a].getW1()].getBU()) == 1)B1 = "ç‰©ç†";
+	if (stoi(vec2[vec[a].getW2()].getBU()) == 1)B2 = "ç‰©ç†";
+	if (stoi(vec2[vec[a].getW3()].getBU()) == 1)B3 = "ç‰©ç†";
+	if (stoi(vec2[vec[a].getW4()].getBU()) == 1)B4 = "ç‰©ç†";
 
 
 
-	cout << "0." << vec2[vec[a].getW1()].getWAZA() << "@         @ƒ^ƒCƒv : " << vec3[vec2[vec[a].getW1()].getTYPE()] << "@@•ª—Ş : " << B1 << "@@ˆĞ—Í : " << vec2[vec[a].getW1()].getI() << "@@–½’†—¦ : " << vec2[vec[a].getW1()].getM() << endl
-		<< "1." << vec2[vec[a].getW2()].getWAZA() << "@         @ƒ^ƒCƒv : " << vec3[vec2[vec[a].getW2()].getTYPE()] << "@@•ª—Ş : " << B2 << "@@ˆĞ—Í : " << vec2[vec[a].getW2()].getI() << "@@–½’†—¦ : " << vec2[vec[a].getW2()].getM() << endl
-		<< "2." << vec2[vec[a].getW3()].getWAZA() << "@         @ƒ^ƒCƒv : " << vec3[vec2[vec[a].getW3()].getTYPE()] << "@@•ª—Ş : " << B3 << "@@ˆĞ—Í : " << vec2[vec[a].getW3()].getI() << "@@–½’†—¦ : " << vec2[vec[a].getW3()].getM() << endl
-		<< "3." << vec2[vec[a].getW4()].getWAZA() << "@         @ƒ^ƒCƒv : " << vec3[vec2[vec[a].getW4()].getTYPE()] << "@@•ª—Ş : " << B4 << "@@ˆĞ—Í : " << vec2[vec[a].getW4()].getI() << "@@–½’†—¦ : " << vec2[vec[a].getW4()].getM() << endl
+	cout << "0." << vec2[vec[a].getW1()].getWAZA() << "ã€€         ã€€ã‚¿ã‚¤ãƒ— : " << vec3[vec2[vec[a].getW1()].getTYPE()] << "ã€€ã€€åˆ†é¡ : " << B1 << "ã€€ã€€å¨åŠ› : " << vec2[vec[a].getW1()].getI() << "ã€€ã€€å‘½ä¸­ç‡ : " << vec2[vec[a].getW1()].getM() << endl
+		<< "1." << vec2[vec[a].getW2()].getWAZA() << "ã€€         ã€€ã‚¿ã‚¤ãƒ— : " << vec3[vec2[vec[a].getW2()].getTYPE()] << "ã€€ã€€åˆ†é¡ : " << B2 << "ã€€ã€€å¨åŠ› : " << vec2[vec[a].getW2()].getI() << "ã€€ã€€å‘½ä¸­ç‡ : " << vec2[vec[a].getW2()].getM() << endl
+		<< "2." << vec2[vec[a].getW3()].getWAZA() << "ã€€         ã€€ã‚¿ã‚¤ãƒ— : " << vec3[vec2[vec[a].getW3()].getTYPE()] << "ã€€ã€€åˆ†é¡ : " << B3 << "ã€€ã€€å¨åŠ› : " << vec2[vec[a].getW3()].getI() << "ã€€ã€€å‘½ä¸­ç‡ : " << vec2[vec[a].getW3()].getM() << endl
+		<< "3." << vec2[vec[a].getW4()].getWAZA() << "ã€€         ã€€ã‚¿ã‚¤ãƒ— : " << vec3[vec2[vec[a].getW4()].getTYPE()] << "ã€€ã€€åˆ†é¡ : " << B4 << "ã€€ã€€å¨åŠ› : " << vec2[vec[a].getW4()].getI() << "ã€€ã€€å‘½ä¸­ç‡ : " << vec2[vec[a].getW4()].getM() << endl
 		<< endl;
 
 
@@ -301,42 +301,42 @@ void BattleWindow(int a, int b, int H1, int H2) {		//ƒoƒgƒ‹‰æ–Ê•`‰æ—pŠÖ”
 
 
 
-void VS(int a, int b) {							//‘Îíis—pŠÖ”
+void VS(int a, int b) {							//å¯¾æˆ¦é€²è¡Œç”¨é–¢æ•°
 
-	int H1 = vec[a].getH(), H2 = vec[b].getH();		//Šeƒ|ƒPƒ‚ƒ“‚Ì‘Ì—Í‚Ìİ’è
-	int c = 0;							//•W€“ü—Í—p•Ï”
-	string C;
-	double KA = 0.5;
+	int H1 = vec[a].getH(), H2 = vec[b].getH();			//å„ãƒã‚±ãƒ¢ãƒ³ã®ä½“åŠ›ã®è¨­å®š
+	int c = 0;							//æ¨™æº–å…¥åŠ›ç”¨å¤‰æ•°
+	string C;							//ã‚¨ãƒ©ãƒ¼ç”¨æ¨™æº–å…¥åŠ›ç”¨å¤‰æ•°							
+	double KA = 0.5;						//æ€¥æ‰€ç¢ºç‡
 	printf("%c[47m", ESC);
 
 
 
-	while (1) {							//‚Ç‚¿‚ç‚©‚Ì‘Ì—Í‚ª0ˆÈ‰º‚É‚È‚ègoto end@‚Åƒ‹[ƒv‚ÌŠO‚É”ò‚Î‚È‚¢ŒÀ‚è,ƒ‹[ƒv‚©‚ç”²‚¯o‚¹‚È‚¢
+	while (1) {								//ã©ã¡ã‚‰ã‹ã®ä½“åŠ›ãŒ0ä»¥ä¸‹ã«ãªã‚Šgoto endã€€ã§ãƒ«ãƒ¼ãƒ—ã®å¤–ã«é£›ã°ãªã„é™ã‚Š,ãƒ«ãƒ¼ãƒ—ã‹ã‚‰æŠœã‘å‡ºã›ãªã„
 		BattleWindow(a, b, H1, H2);
 
-		int Q = 0;							//0,1,2,3ŒŸo—p•Ï”
+		int Q = 0;							//0,1,2,3æ¤œå‡ºç”¨å¤‰æ•°
 		do {
 			Q = 0;
-			cout << "‘I‘ğ‚µ‚½‚¢‹Z‚Ì”Ô†i0,1,2,3)‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢.“ü—ÍŒãEnter‚ÅŠm’è‚Å‚«‚Ü‚·\n";
+			cout << "é¸æŠã—ãŸã„æŠ€ã®ç•ªå·ï¼ˆ0,1,2,3)ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„.å…¥åŠ›å¾ŒEnterã§ç¢ºå®šã§ãã¾ã™\n";
 			cin >> C;
 
-			if (all_of(C.cbegin(), C.cend(), isdigit)) {										//10i”‚©‚Ç‚¤‚©ŒŸ’m
-				if (stoi(C) == 0 || stoi(C) == 1 || stoi(C) == 2 || stoi(C) == 3)Q = 1;			//0,1,2,3‚©‚Ç‚¤‚©ŒŸ’m
-				else cout << "0,1,2,3ˆÈŠO‚Ì•¶š‚ª“ü—Í‚³‚ê‚Ü‚µ‚½II‚à‚¤ˆê“x“ü—Í‚ğ‚â‚è’¼‚µ‚Ä‚­‚¾‚³‚¢\n";
+			if (all_of(C.cbegin(), C.cend(), isdigit)) {										//10é€²æ•°ã‹ã©ã†ã‹æ¤œçŸ¥
+				if (stoi(C) == 0 || stoi(C) == 1 || stoi(C) == 2 || stoi(C) == 3)Q = 1;			//0,1,2,3ã‹ã©ã†ã‹æ¤œçŸ¥
+				else cout << "0,1,2,3ä»¥å¤–ã®æ–‡å­—ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸï¼ï¼ã‚‚ã†ä¸€åº¦å…¥åŠ›ã‚’ã‚„ã‚Šç›´ã—ã¦ãã ã•ã„\n";
 			}
-			else cout << "0,1,2,3ˆÈŠO‚Ì•¶š‚ª“ü—Í‚³‚ê‚Ü‚µ‚½II‚à‚¤ˆê“x“ü—Í‚ğ‚â‚è’¼‚µ‚Ä‚­‚¾‚³‚¢\n";
-		} while (Q == 0);						//0,1,2,3ˆÈŠO‚Ì“ü—Í‚Å‚Íƒ‹[ƒv‚©‚ço‚ç‚ê‚È‚¢
+			else cout << "0,1,2,3ä»¥å¤–ã®æ–‡å­—ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸï¼ï¼ã‚‚ã†ä¸€åº¦å…¥åŠ›ã‚’ã‚„ã‚Šç›´ã—ã¦ãã ã•ã„\n";
+		} while (Q == 0);						//0,1,2,3ä»¥å¤–ã®å…¥åŠ›ã§ã¯ãƒ«ãƒ¼ãƒ—ã‹ã‚‰å‡ºã‚‰ã‚Œãªã„
 
 
 
-		c = stoi(C);							//“ü—Í“à—e‚ğint‚É•ÏŠ·
-		int SE = dist1(engine);					//‘Šèƒ|ƒPƒ‚ƒ“‚Ì‹Z‘I‘ğ,©•ª‚Ì‚Á‚Ä‚é4‚Â‚Ì‹Z‚©‚ç1‚Â‚Ì‹Z‚ğ‘I‘ğ(0,1,2,3‚ğ¶¬j
-		double d = 0;							//‹}ŠŠm—§¶¬—p•Ï” ‰Šú‰»
+		c = stoi(C);							//å…¥åŠ›å†…å®¹ã‚’intã«å¤‰æ›
+		int SE = dist1(engine);						//ç›¸æ‰‹ãƒã‚±ãƒ¢ãƒ³ã®æŠ€é¸æŠ,è‡ªåˆ†ã®æŒã£ã¦ã‚‹4ã¤ã®æŠ€ã‹ã‚‰1ã¤ã®æŠ€ã‚’é¸æŠ(0,1,2,3ã‚’ç”Ÿæˆï¼‰
+		double d = 0;							//æ€¥æ‰€ç¢ºç«‹ç”Ÿæˆç”¨å¤‰æ•° åˆæœŸåŒ–
 
 
-		if (vec[a].getS() >= vec[b].getS()) {						//©•ªƒ|ƒPƒ‚ƒ“‚Ì‚·‚Î‚â‚³‚ª‚‚¢,‚à‚µ‚­‚Í‚¨‚È‚¶‚·‚Î‚â‚³
+		if (vec[a].getS() >= vec[b].getS()) {				//è‡ªåˆ†ãƒã‚±ãƒ¢ãƒ³ã®ã™ã°ã‚„ã•ãŒé«˜ã„,ã‚‚ã—ãã¯ãŠãªã˜ã™ã°ã‚„ã•
 
-			cout << endl << "‚¢‚¯I" << vec[a].getName() << "‚Ì";
+			cout << endl << "ã„ã‘ï¼" << vec[a].getName() << "ã®";
 			if (c == 0)cout << vec2[vec[a].getW1()].getWAZA();
 			else if (c == 1)cout << vec2[vec[a].getW2()].getWAZA();
 			else if (c == 2)cout << vec2[vec[a].getW3()].getWAZA();
@@ -344,23 +344,23 @@ void VS(int a, int b) {							//‘Îíis—pŠÖ”
 			cout << "!" << endl;
 			wait();
 
-			d = dist2(engine);						//‹}ŠŠm—¦¶¬
-			if (d > KA)cout << "‹}Š‚É“–‚½‚Á‚½IIIIII" << endl;
+			d = dist2(engine);					//æ€¥æ‰€ç¢ºç‡ç”Ÿæˆ
+			if (d > KA)cout << "æ€¥æ‰€ã«å½“ãŸã£ãŸï¼ï¼ï¼ï¼ï¼ï¼" << endl;
 
-			cout << "‘Šè‚Ì" << vec[b].getName() << "‚Í" << Damage(a, b, c, d) << "‚Ìƒ_ƒ[ƒW‚ğó‚¯‚½!\n";
+			cout << "ç›¸æ‰‹ã®" << vec[b].getName() << "ã¯" << Damage(a, b, c, d) << "ã®ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘ãŸ!\n";
 			wait();
 
 
-			H2 = H2 - Damage(a, b, c, d);			//ƒ_ƒ[ƒWŒvZŒã‘Ì—Í‚Ì”½‰f
+			H2 = H2 - Damage(a, b, c, d);				//ãƒ€ãƒ¡ãƒ¼ã‚¸è¨ˆç®—å¾Œä½“åŠ›ã®åæ˜ 
 
 			if (H2 < 0) {
 				H2 = 0;
 				BattleWindow(a, b, H1, H2);
-				cout << "©•ª‚Ì" << vec[a].getName() << "‚ÌŸ—˜!";
+				cout << "è‡ªåˆ†ã®" << vec[a].getName() << "ã®å‹åˆ©!";
 				goto end;
 			}
 
-			cout << "Ÿ‚É‘Šè‚Ì" << vec[b].getName() << "‚Ì";
+			cout << "æ¬¡ã«ç›¸æ‰‹ã®" << vec[b].getName() << "ã®";
 			if (SE == 0)cout << vec2[vec[b].getW1()].getWAZA();
 			else if (SE == 1)cout << vec2[vec[b].getW2()].getWAZA();
 			else if (SE == 2)cout << vec2[vec[b].getW3()].getWAZA();
@@ -368,23 +368,23 @@ void VS(int a, int b) {							//‘Îíis—pŠÖ”
 			cout << "!" << endl;
 			wait();
 
-			d = dist2(engine);						//‹}ŠŠm—¦¶¬
-			if (d > KA)cout << "‹}Š‚É“–‚½‚Á‚½IIIIII" << endl;
+			d = dist2(engine);					//æ€¥æ‰€ç¢ºç‡ç”Ÿæˆ
+			if (d > KA)cout << "æ€¥æ‰€ã«å½“ãŸã£ãŸï¼ï¼ï¼ï¼ï¼ï¼" << endl;
 
-			cout << "©•ª‚Ì" << vec[a].getName() << "‚Í" << Damage(b, a, SE, d) << "‚Ìƒ_ƒ[ƒW‚ğó‚¯‚½!\n";
+			cout << "è‡ªåˆ†ã®" << vec[a].getName() << "ã¯" << Damage(b, a, SE, d) << "ã®ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘ãŸ!\n";
 			wait();
-			H1 = H1 - Damage(b, a, SE, d);			//ƒ_ƒ[ƒWŒvZŒã‘Ì—Í‚Ì”½‰f
+			H1 = H1 - Damage(b, a, SE, d);				//ãƒ€ãƒ¡ãƒ¼ã‚¸è¨ˆç®—å¾Œä½“åŠ›ã®åæ˜ 
 			if (H1 < 0) {
 				H1 = 0;
 				BattleWindow(a, b, H1, H2);
-				cout << "•‰‚¯‚Ä‚µ‚Ü‚Á‚½.....‘Šè‚Ì" << vec[b].getName() << "‚ÌŸ—˜!";
+				cout << "è² ã‘ã¦ã—ã¾ã£ãŸ.....ç›¸æ‰‹ã®" << vec[b].getName() << "ã®å‹åˆ©!";
 				goto end;
 			}
 		}
 
-		if (vec[a].getS() < vec[b].getS()) {				//‘Šè‚Ìƒ|ƒPƒ‚ƒ“‚Ì‚·‚Î‚â‚³‚Ì‚Ù‚¤‚ª‚‚¢ê‡
+		if (vec[a].getS() < vec[b].getS()) {				//ç›¸æ‰‹ã®ãƒã‚±ãƒ¢ãƒ³ã®ã™ã°ã‚„ã•ã®ã»ã†ãŒé«˜ã„å ´åˆ
 
-			cout << "‚·‚Î‚â‚¢‘Šè‚Ì" << vec[b].getName() << "‚Ì";
+			cout << "ã™ã°ã‚„ã„ç›¸æ‰‹ã®" << vec[b].getName() << "ã®";
 			if (SE == 0)cout << vec2[vec[b].getW1()].getWAZA();
 			else if (SE == 1)cout << vec2[vec[b].getW2()].getWAZA();
 			else if (SE == 2)cout << vec2[vec[b].getW3()].getWAZA();
@@ -392,21 +392,21 @@ void VS(int a, int b) {							//‘Îíis—pŠÖ”
 			cout << "!" << endl;
 			wait();
 
-			d = dist2(engine);						//‹}ŠŠm—¦¶¬
-			if (d > KA)cout << "‹}Š‚É“–‚½‚Á‚½IIIIII" << endl;
+			d = dist2(engine);					//æ€¥æ‰€ç¢ºç‡ç”Ÿæˆ
+			if (d > KA)cout << "æ€¥æ‰€ã«å½“ãŸã£ãŸï¼ï¼ï¼ï¼ï¼ï¼" << endl;
 
-			cout << "©•ª‚Ì" << vec[a].getName() << "‚Í" << Damage(b, a, SE, d) << "‚Ìƒ_ƒ[ƒW‚ğó‚¯‚½!\n";
+			cout << "è‡ªåˆ†ã®" << vec[a].getName() << "ã¯" << Damage(b, a, SE, d) << "ã®ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘ãŸ!\n";
 			wait();
 
-			H1 = H1 - Damage(b, a, SE, d);			//ƒ_ƒ[ƒWŒvZŒã‘Ì—Í‚Ì”½‰f
+			H1 = H1 - Damage(b, a, SE, d);				//ãƒ€ãƒ¡ãƒ¼ã‚¸è¨ˆç®—å¾Œä½“åŠ›ã®åæ˜ 
 			if (H1 < 0) {
 				H1 = 0;
 				BattleWindow(a, b, H1, H2);
-				cout << "•‰‚¯‚Ä‚µ‚Ü‚Á‚½.....‘Šè‚Ì" << vec[b].getName() << "‚ÌŸ—˜!";
+				cout << "è² ã‘ã¦ã—ã¾ã£ãŸ.....ç›¸æ‰‹ã®" << vec[b].getName() << "ã®å‹åˆ©!";
 				goto end;
 			}
 
-			cout << endl << "Ÿ‚É" << vec[a].getName() << "‚Ì";
+			cout << endl << "æ¬¡ã«" << vec[a].getName() << "ã®";
 			if (c == 0)cout << vec2[vec[a].getW1()].getWAZA();
 			else if (c == 1)cout << vec2[vec[a].getW2()].getWAZA();
 			else if (c == 2)cout << vec2[vec[a].getW3()].getWAZA();
@@ -414,17 +414,17 @@ void VS(int a, int b) {							//‘Îíis—pŠÖ”
 			cout << "!" << endl;
 			wait();
 
-			d = dist2(engine);						//‹}ŠŠm—¦¶¬
-			if (d > KA)cout << "‹}Š‚É“–‚½‚Á‚½IIIIII" << endl;
+			d = dist2(engine);					//æ€¥æ‰€ç¢ºç‡ç”Ÿæˆ
+			if (d > KA)cout << "æ€¥æ‰€ã«å½“ãŸã£ãŸï¼ï¼ï¼ï¼ï¼ï¼" << endl;
 
-			cout << "‘Šè‚Ì" << vec[b].getName() << "‚Í" << Damage(a, b, c, d) << "‚Ìƒ_ƒ[ƒW‚ğó‚¯‚½!\n";
+			cout << "ç›¸æ‰‹ã®" << vec[b].getName() << "ã¯" << Damage(a, b, c, d) << "ã®ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘ãŸ!\n";
 			wait();
 
-			H2 = H2 - Damage(a, b, c, d);			//ƒ_ƒ[ƒWŒvZŒã‘Ì—Í‚Ì”½‰f
+			H2 = H2 - Damage(a, b, c, d);				//ãƒ€ãƒ¡ãƒ¼ã‚¸è¨ˆç®—å¾Œä½“åŠ›ã®åæ˜ 
 			if (H2 < 0) {
 				H2 = 0;
 				BattleWindow(a, b, H1, H2);
-				cout << "©•ª‚Ì" << vec[a].getName() << "‚ÌŸ—˜!";
+				cout << "è‡ªåˆ†ã®" << vec[a].getName() << "ã®å‹åˆ©!";
 				goto end;
 			}
 		}
@@ -452,34 +452,34 @@ int main() {
 	Class2();
 	VEC();
 
-	string a, b;						//©•ª,‘Šèƒ|ƒPƒ‚ƒ“‘I‘ğ—p•Ï”
-	int Q = 0;							//“ü—ÍƒGƒ‰[ŒŸo—p•Ï”
+	string a, b;						//è‡ªåˆ†,ç›¸æ‰‹ãƒã‚±ãƒ¢ãƒ³é¸æŠç”¨å¤‰æ•°
+	int Q = 0;						//å…¥åŠ›ã‚¨ãƒ©ãƒ¼æ¤œå‡ºç”¨å¤‰æ•°
 
-	system("cls");						//‰æ–ÊƒNƒŠƒA
+	system("cls");						//ç”»é¢ã‚¯ãƒªã‚¢
 
 	do {
 		Q = 0;
-		cout << "©•ª‚Ìg‚¢‚½‚¢ƒ|ƒPƒ‚ƒ“‚ğ”Ô†‚Å‘I‚ñ‚Å,”Ô†i0,1,2,3)‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢.“ü—ÍŒãEnter‚ÅŠm’è‚Å‚«‚Ü‚·\n";
+		cout << "è‡ªåˆ†ã®ä½¿ã„ãŸã„ãƒã‚±ãƒ¢ãƒ³ã‚’ç•ªå·ã§é¸ã‚“ã§,ç•ªå·ï¼ˆ0,1,2,3)ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„.å…¥åŠ›å¾ŒEnterã§ç¢ºå®šã§ãã¾ã™\n";
 		int p = 0;
 		for (auto A1 : vec) {
-			cout << p << "." << A1.getName() << "       \n";		//Šeƒ|ƒPƒ‚ƒ“—…—ñ
+			cout << p << "." << A1.getName() << "       \n";		//å„ãƒã‚±ãƒ¢ãƒ³ç¾…åˆ—
 			p++;
 		}
 
-		cin >> a;						//©•ªƒ|ƒPƒ‚ƒ“‘I‘ğ
-		if (all_of(a.cbegin(), a.cend(), isdigit)) {									//10i”‚©‚Ç‚¤‚©ŒŸ’m
-			if (stoi(a) == 0 || stoi(a) == 1 || stoi(a) == 2 || stoi(a) == 3)Q = 1;		//0,1,2,3‚©‚Ç‚¤‚©ŒŸ’m
-			else cout << "0,1,2,3ˆÈŠO‚Ì•¶š‚ª“ü—Í‚³‚ê‚Ü‚µ‚½II‚à‚¤ˆê“x“ü—Í‚ğ‚â‚è’¼‚µ‚Ä‚­‚¾‚³‚¢\n";
+		cin >> a;								//è‡ªåˆ†ãƒã‚±ãƒ¢ãƒ³é¸æŠ
+		if (all_of(a.cbegin(), a.cend(), isdigit)) {							//10é€²æ•°ã‹ã©ã†ã‹æ¤œçŸ¥
+			if (stoi(a) == 0 || stoi(a) == 1 || stoi(a) == 2 || stoi(a) == 3)Q = 1;			//0,1,2,3ã‹ã©ã†ã‹æ¤œçŸ¥
+			else cout << "0,1,2,3ä»¥å¤–ã®æ–‡å­—ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸï¼ï¼ã‚‚ã†ä¸€åº¦å…¥åŠ›ã‚’ã‚„ã‚Šç›´ã—ã¦ãã ã•ã„\n";
 		}
-		else cout << "0,1,2,3ˆÈŠO‚Ì•¶š‚ª“ü—Í‚³‚ê‚Ü‚µ‚½II‚à‚¤ˆê“x“ü—Í‚ğ‚â‚è’¼‚µ‚Ä‚­‚¾‚³‚¢\n";
-	} while (Q == 0);						//0,1,2,3ˆÈŠO‚Ì“ü—Í‚Å‚Íƒ‹[ƒv‚©‚ço‚ç‚ê‚È‚¢
+		else cout << "0,1,2,3ä»¥å¤–ã®æ–‡å­—ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸï¼ï¼ã‚‚ã†ä¸€åº¦å…¥åŠ›ã‚’ã‚„ã‚Šç›´ã—ã¦ãã ã•ã„\n";
+	} while (Q == 0);											//0,1,2,3ä»¥å¤–ã®å…¥åŠ›ã§ã¯ãƒ«ãƒ¼ãƒ—ã‹ã‚‰å‡ºã‚‰ã‚Œãªã„
 
 
-	cout << endl << "‚ ‚È‚½‚ª‘I‚ñ‚¾ƒ|ƒPƒ‚ƒ“‚Í" << vec[stoi(a)].getName() << "‚Å‚·." << endl;
+	cout << endl << "ã‚ãªãŸãŒé¸ã‚“ã ãƒã‚±ãƒ¢ãƒ³ã¯" << vec[stoi(a)].getName() << "ã§ã™." << endl;
 
 	do {
 		Q = 0;
-		cout << "Ÿ‚É‘Šè‚Ìƒ|ƒPƒ‚ƒ“‚ğ‘I‚ñ‚Å,”Ô†i0,1,2,3)‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢.“ü—ÍŒãEnter‚ÅŠm’è‚Å‚«‚Ü‚·\n";
+		cout << "æ¬¡ã«ç›¸æ‰‹ã®ãƒã‚±ãƒ¢ãƒ³ã‚’é¸ã‚“ã§,ç•ªå·ï¼ˆ0,1,2,3)ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„.å…¥åŠ›å¾ŒEnterã§ç¢ºå®šã§ãã¾ã™\n";
 
 		int p = 0;
 		for (auto A1 : vec) {
@@ -487,23 +487,23 @@ int main() {
 			p++;
 		}
 
-		cin >> b;							//‘Šèƒ|ƒPƒ‚ƒ“‘I‘ğ
-		if (all_of(b.cbegin(), b.cend(), isdigit)) {										//10i”‚©‚Ç‚¤‚©ŒŸ’m
-			if (stoi(b) == 0 || stoi(b) == 1 || stoi(b) == 2 || stoi(b) == 3)Q = 1;			//0,1,2,3‚©‚Ç‚¤‚©ŒŸ’m
-			else cout << "0,1,2,3ˆÈŠO‚Ì•¶š‚ª“ü—Í‚³‚ê‚Ü‚µ‚½II‚à‚¤ˆê“x“ü—Í‚ğ‚â‚è’¼‚µ‚Ä‚­‚¾‚³‚¢\n";
+		cin >> b;								//ç›¸æ‰‹ãƒã‚±ãƒ¢ãƒ³é¸æŠ
+		if (all_of(b.cbegin(), b.cend(), isdigit)) {							//10é€²æ•°ã‹ã©ã†ã‹æ¤œçŸ¥
+			if (stoi(b) == 0 || stoi(b) == 1 || stoi(b) == 2 || stoi(b) == 3)Q = 1;			//0,1,2,3ã‹ã©ã†ã‹æ¤œçŸ¥
+			else cout << "0,1,2,3ä»¥å¤–ã®æ–‡å­—ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸï¼ï¼ã‚‚ã†ä¸€åº¦å…¥åŠ›ã‚’ã‚„ã‚Šç›´ã—ã¦ãã ã•ã„\n";
 		}
-		else cout << "0,1,2,3ˆÈŠO‚Ì•¶š‚ª“ü—Í‚³‚ê‚Ü‚µ‚½II‚à‚¤ˆê“x“ü—Í‚ğ‚â‚è’¼‚µ‚Ä‚­‚¾‚³‚¢\n";
-	} while (Q == 0);						//0,1,2,3ˆÈŠO‚Ì“ü—Í‚Å‚Íƒ‹[ƒv‚©‚ço‚ç‚ê‚È‚¢
+		else cout << "0,1,2,3ä»¥å¤–ã®æ–‡å­—ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸï¼ï¼ã‚‚ã†ä¸€åº¦å…¥åŠ›ã‚’ã‚„ã‚Šç›´ã—ã¦ãã ã•ã„\n";
+	} while (Q == 0);											//0,1,2,3ä»¥å¤–ã®å…¥åŠ›ã§ã¯ãƒ«ãƒ¼ãƒ—ã‹ã‚‰å‡ºã‚‰ã‚Œãªã„
 
 
-	cout << endl << "‘Šè‚Ìƒ|ƒPƒ‚ƒ“‚Í" << vec[stoi(b)].getName() << "‚Å‚·.\n";
-	cout << "‘Îí‰æ–Ê‚É‰f‚è‚Ü‚·.­X‚¨‘Ò‚¿‚­‚¾‚³‚¢";
-	wait();																	//‘Šèƒ|ƒPƒ‚ƒ“Šm”F—p‘Ò‹@ŠÔ¶¬
+	cout << endl << "ç›¸æ‰‹ã®ãƒã‚±ãƒ¢ãƒ³ã¯" << vec[stoi(b)].getName() << "ã§ã™.\n";
+	cout << "å¯¾æˆ¦ç”»é¢ã«æ˜ ã‚Šã¾ã™.å°‘ã€…ãŠå¾…ã¡ãã ã•ã„";
+	wait();													//ç›¸æ‰‹ãƒã‚±ãƒ¢ãƒ³ç¢ºèªç”¨å¾…æ©Ÿæ™‚é–“ç”Ÿæˆ
 
 
 
 
 
-	VS(stoi(a), stoi(b));													//‘ÎíŠJn
+	VS(stoi(a), stoi(b));											//å¯¾æˆ¦é–‹å§‹
 
 }
